@@ -30,7 +30,7 @@ export default function OrderListScreen(props) {
   };
   return (
     <div>
-      <h1>Orders</h1>
+      <h1>주문</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {loading ? (
@@ -41,13 +41,13 @@ export default function OrderListScreen(props) {
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>아이디</th>
+              <th>유저</th>
+              <th>날짜</th>
+              <th>합계</th>
+              <th>결제됨</th>
+              <th>판매됨</th>
+              <th>액션</th>
             </tr>
           </thead>
           <tbody>
@@ -71,14 +71,14 @@ export default function OrderListScreen(props) {
                       props.history.push(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                    상세보기
                   </button>
                   <button
                     type="button"
                     className="small"
                     onClick={() => deleteHandler(order)}
                   >
-                    Delete
+                    삭제하기
                   </button>
                 </td>
               </tr>

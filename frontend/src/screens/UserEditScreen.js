@@ -49,7 +49,7 @@ export default function UserEditScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Edit User {name}</h1>
+          <h1>프로필 업데이트 {name}</h1>
           {loadingUpdate && <LoadingBox></LoadingBox>}
           {errorUpdate && (
             <MessageBox variant="danger">{errorUpdate}</MessageBox>
@@ -62,7 +62,7 @@ export default function UserEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">이름</label>
               <input
                 id="name"
                 type="text"
@@ -72,7 +72,7 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">이메일</label>
               <input
                 id="email"
                 type="email"
@@ -82,7 +82,7 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="isSeller">Is Seller</label>
+              <label htmlFor="isSeller">판매자이신가요?</label>
               <input
                 id="isSeller"
                 type="checkbox"
@@ -91,7 +91,7 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="isAdmin">Is Admin</label>
+              <label htmlFor="isAdmin">관리자이신가요?</label>
               <input
                 id="isAdmin"
                 type="checkbox"
@@ -101,7 +101,7 @@ export default function UserEditScreen(props) {
             </div>
             <div>
               <button type="submit" className="primary">
-                Update
+                업데이트하기
               </button>
             </div>
           </>

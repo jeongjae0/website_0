@@ -39,10 +39,10 @@ export default function PlaceOrderScreen(props) {
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Shipping</h2>
+                <h2>결제</h2>
                 <p>
-                  <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
-                  <strong>Address: </strong> {cart.shippingAddress.address},
+                  <strong>이름:</strong> {cart.shippingAddress.fullName} <br />
+                  <strong>주소: </strong> {cart.shippingAddress.address},
                   {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}
                   ,{cart.shippingAddress.country}
                 </p>
@@ -50,15 +50,15 @@ export default function PlaceOrderScreen(props) {
             </li>
             <li>
               <div className="card card-body">
-                <h2>Payment</h2>
+                <h2>결제 방법</h2>
                 <p>
-                  <strong>Method:</strong> {cart.paymentMethod}
+                  <strong>방법:</strong> {cart.paymentMethod}
                 </p>
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Order Items</h2>
+                <h2>주문 제품</h2>
                 <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
@@ -91,30 +91,30 @@ export default function PlaceOrderScreen(props) {
           <div className="card card-body">
             <ul>
               <li>
-                <h2>Order Summary</h2>
+                <h2>주문내역</h2>
               </li>
               <li>
                 <div className="row">
-                  <div>Items</div>
+                  <div>제품가</div>
                   <div>${cart.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Shipping</div>
+                  <div>배송비</div>
                   <div>${cart.shippingPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Tax</div>
+                  <div>세금</div>
                   <div>${cart.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong>총합계</strong>
                   </div>
                   <div>
                     <strong>${cart.totalPrice.toFixed(2)}</strong>
@@ -128,7 +128,7 @@ export default function PlaceOrderScreen(props) {
                   className="primary block"
                   disabled={cart.cartItems.length === 0}
                 >
-                  Place Order
+                  주문하기
                 </button>
               </li>
               {loading && <LoadingBox></LoadingBox>}

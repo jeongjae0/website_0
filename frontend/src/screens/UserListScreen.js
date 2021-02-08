@@ -30,11 +30,11 @@ export default function UserListScreen(props) {
   };
   return (
     <div>
-      <h1>Users</h1>
+      <h1>사용자들</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {successDelete && (
-        <MessageBox variant="success">User Deleted Successfully</MessageBox>
+        <MessageBox variant="success">사용자가 성공적으로 데이터에서 삭제되었습니다.</MessageBox>
       )}
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -44,12 +44,12 @@ export default function UserListScreen(props) {
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>EMAIL</th>
-              <th>IS SELLER</th>
-              <th>IS ADMIN</th>
-              <th>ACTIONS</th>
+              <th>아이디</th>
+              <th>이름</th>
+              <th>이메일</th>
+              <th>판매자?</th>
+              <th>관리자?</th>
+              <th>액션</th>
             </tr>
           </thead>
           <tbody>
@@ -66,14 +66,14 @@ export default function UserListScreen(props) {
                     className="small"
                     onClick={() => props.history.push(`/user/${user._id}/edit`)}
                   >
-                    Edit
+                    수정하기
                   </button>
                   <button
                     type="button"
                     className="small"
                     onClick={() => deleteHandler(user)}
                   >
-                    Delete
+                    삭제하기
                   </button>
                 </td>
               </tr>

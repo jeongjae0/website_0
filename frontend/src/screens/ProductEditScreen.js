@@ -13,7 +13,6 @@ export default function ProductEditScreen(props) {
   const [image, setImage] = useState('');
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
-  const [brand, setBrand] = useState('');
   const [description, setDescription] = useState('');
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -40,7 +39,6 @@ export default function ProductEditScreen(props) {
       setImage(product.image);
       setCategory(product.category);
       setCountInStock(product.countInStock);
-      setBrand(product.brand);
       setDescription(product.description);
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
@@ -54,7 +52,6 @@ export default function ProductEditScreen(props) {
         price,
         image,
         category,
-        brand,
         countInStock,
         description,
       })
@@ -89,7 +86,7 @@ export default function ProductEditScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Edit Product {productId}</h1>
+          <h1>판매제품 수정하기{productId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
         {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
@@ -100,7 +97,7 @@ export default function ProductEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">이름</label>
               <input
                 id="name"
                 type="text"
@@ -110,7 +107,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price">가격</label>
               <input
                 id="price"
                 type="text"
@@ -120,7 +117,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image">이미지</label>
               <input
                 id="image"
                 type="text"
@@ -130,7 +127,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="imageFile">Image File</label>
+              <label htmlFor="imageFile">이미지 파일</label>
               <input
                 type="file"
                 id="imageFile"
@@ -143,23 +140,13 @@ export default function ProductEditScreen(props) {
               )}
             </div>
             <div>
-              <label htmlFor="category">Category</label>
+              <label htmlFor="category">카테고리</label>
               <input
                 id="category"
                 type="text"
                 placeholder="Enter category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="brand">Brand</label>
-              <input
-                id="brand"
-                type="text"
-                placeholder="Enter brand"
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
               ></input>
             </div>
             <div>

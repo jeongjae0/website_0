@@ -30,12 +30,12 @@ export default function SigninScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Sign In</h1>
+          <h1>로그인 페이지</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">이메일</label>
           <input
             type="email"
             id="email"
@@ -45,7 +45,7 @@ export default function SigninScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">비밀번호</label>
           <input
             type="password"
             id="password"
@@ -57,15 +57,15 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <button className="primary" type="submit">
-            Sign In
+            로그인
           </button>
         </div>
         <div>
           <label />
           <div>
-            New customer?{' '}
+            새로운 고객이세요?{' '}
             <Link to={`/register?redirect=${redirect}`}>
-              Create your account
+              계정을 만드세요. 
             </Link>
           </div>
         </div>

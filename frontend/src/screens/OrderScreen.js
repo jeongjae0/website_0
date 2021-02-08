@@ -77,47 +77,47 @@ export default function OrderScreen(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <h1>Order {order._id}</h1>
+      <h1>주문 {order._id}</h1>
       <div className="row top">
         <div className="col-2">
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Shippring</h2>
+                <h2>결제</h2>
                 <p>
-                  <strong>Name:</strong> {order.shippingAddress.fullName} <br />
-                  <strong>Address: </strong> {order.shippingAddress.address},
+                  <strong>이름:</strong> {order.shippingAddress.fullName} <br />
+                  <strong>주소: </strong> {order.shippingAddress.address},
                   {order.shippingAddress.city},{' '}
                   {order.shippingAddress.postalCode},
                   {order.shippingAddress.country}
                 </p>
                 {order.isDelivered ? (
                   <MessageBox variant="success">
-                    Delivered at {order.deliveredAt}
+                    {order.deliveredAt} 판매됨
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Delivered</MessageBox>
+                  <MessageBox variant="danger">상품이 전달되지 않음</MessageBox>
                 )}
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Payment</h2>
+                <h2>결제</h2>
                 <p>
-                  <strong>Method:</strong> {order.paymentMethod}
+                  <strong>방법:</strong> {order.paymentMethod}
                 </p>
                 {order.isPaid ? (
                   <MessageBox variant="success">
-                    Paid at {order.paidAt}
+                    {order.paidAt} 결제됨
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Paid</MessageBox>
+                  <MessageBox variant="danger">결제되지 않음</MessageBox>
                 )}
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Order Items</h2>
+                <h2>주문내역</h2>
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
@@ -150,30 +150,30 @@ export default function OrderScreen(props) {
           <div className="card card-body">
             <ul>
               <li>
-                <h2>Order Summary</h2>
+                <h2>주문내역</h2>
               </li>
               <li>
                 <div className="row">
-                  <div>Items</div>
+                  <div>제품가</div>
                   <div>${order.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Shipping</div>
+                  <div>배송비</div>
                   <div>${order.shippingPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Tax</div>
+                  <div>세금</div>
                   <div>${order.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong>총합계</strong>
                   </div>
                   <div>
                     <strong>${order.totalPrice.toFixed(2)}</strong>
@@ -210,7 +210,7 @@ export default function OrderScreen(props) {
                     className="primary block"
                     onClick={deliverHandler}
                   >
-                    Deliver Order
+                    주문 배송 완료
                   </button>
                 </li>
               )}

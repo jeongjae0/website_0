@@ -60,26 +60,26 @@ export default function SearchScreen(props) {
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-          <div>{products.length} Results</div>
+          <div>{products.length} 결과</div>
         )}
         <div>
-          Sort by{' '}
+          필터링하기{' '}
           <select
             value={order}
             onChange={(e) => {
               props.history.push(getFilterUrl({ order: e.target.value }));
             }}
           >
-            <option value="newest">Newest Arrivals</option>
-            <option value="lowest">Price: Low to High</option>
-            <option value="highest">Price: High to Low</option>
-            <option value="toprated">Avg. Customer Reviews</option>
+            <option value="newest">빨리 도착한 순</option>
+            <option value="lowest">가격: 낮은 것에서 높은 것 순</option>
+            <option value="highest">가격: 높은 것에서 낮은 것 순</option>
+            <option value="toprated">평균 소비자 리뷰 점수</option>
           </select>
         </div>
       </div>
       <div className="row top">
         <div className="col-1">
-          <h3>Department</h3>
+          <h3>지점</h3>
           <div>
             {loadingCategories ? (
               <LoadingBox></LoadingBox>
@@ -109,7 +109,7 @@ export default function SearchScreen(props) {
             )}
           </div>
           <div>
-            <h3>Price</h3>
+            <h3>가격</h3>
             <ul>
               {prices.map((p) => (
                 <li key={p.name}>
@@ -126,7 +126,7 @@ export default function SearchScreen(props) {
             </ul>
           </div>
           <div>
-            <h3>Avg. Customer Review</h3>
+            <h3>평균 소비자 리뷰 점수</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
@@ -149,7 +149,7 @@ export default function SearchScreen(props) {
           ) : (
             <>
               {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
+                <MessageBox>0개의 제품이 확인되었습니다.</MessageBox>
               )}
               <div className="row center">
                 {products.map((product) => (

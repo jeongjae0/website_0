@@ -62,7 +62,7 @@ export default function ProfileScreen() {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>User Profile</h1>
+          <h1>사용자 프로필</h1>
         </div>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -76,11 +76,11 @@ export default function ProfileScreen() {
             )}
             {successUpdate && (
               <MessageBox variant="success">
-                Profile Updated Successfully
+                프로필이 성공적으로 업데이트 되었습니다.
               </MessageBox>
             )}
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">이름</label>
               <input
                 id="name"
                 type="text"
@@ -90,7 +90,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">이메일</label>
               <input
                 id="email"
                 type="email"
@@ -100,7 +100,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">비밀번호</label>
               <input
                 id="password"
                 type="password"
@@ -109,7 +109,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">비밀번호 확인</label>
               <input
                 id="confirmPassword"
                 type="password"
@@ -121,7 +121,7 @@ export default function ProfileScreen() {
               <>
                 <h2>Seller</h2>
                 <div>
-                  <label htmlFor="sellerName">Seller Name</label>
+                  <label htmlFor="sellerName">판매자 이름</label>
                   <input
                     id="sellerName"
                     type="text"
@@ -131,7 +131,7 @@ export default function ProfileScreen() {
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerLogo">Seller Logo</label>
+                  <label htmlFor="sellerLogo">판매자 아바타</label>
                   <input
                     id="sellerLogo"
                     type="text"
@@ -141,7 +141,7 @@ export default function ProfileScreen() {
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerDescription">Seller Description</label>
+                  <label htmlFor="sellerDescription">판매자 설명</label>
                   <input
                     id="sellerDescription"
                     type="text"
@@ -155,7 +155,7 @@ export default function ProfileScreen() {
             <div>
               <label />
               <button className="primary" type="submit">
-                Update
+                업데이트하기
               </button>
             </div>
           </>

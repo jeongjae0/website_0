@@ -21,7 +21,6 @@ export default function ShippingAddressScreen(props) {
   const [address, setAddress] = useState(shippingAddress.address);
   const [city, setCity] = useState(shippingAddress.city);
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
-  const [country, setCountry] = useState(shippingAddress.country);
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -44,7 +43,6 @@ export default function ShippingAddressScreen(props) {
           address,
           city,
           postalCode,
-          country,
           lat: newLat,
           lng: newLng,
         })
@@ -59,7 +57,6 @@ export default function ShippingAddressScreen(props) {
         address,
         city,
         postalCode,
-        country,
         lat,
         lng,
       })
@@ -71,10 +68,10 @@ export default function ShippingAddressScreen(props) {
       <CheckoutSteps step1 step2></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Shipping Address</h1>
+          <h1>주문내역</h1>
         </div>
         <div>
-          <label htmlFor="fullName">Full Name</label>
+          <label htmlFor="fullName">성함</label>
           <input
             type="text"
             id="fullName"
@@ -85,7 +82,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">주소</label>
           <input
             type="text"
             id="address"
@@ -96,7 +93,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">도시</label>
           <input
             type="text"
             id="city"
@@ -107,7 +104,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="postalCode">우편번호</label>
           <input
             type="text"
             id="postalCode"
@@ -118,26 +115,15 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="country">Country</label>
-          <input
-            type="text"
-            id="country"
-            placeholder="Enter country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="chooseOnMap">Location</label>
+          <label htmlFor="chooseOnMap">위치</label>
           <button type="button" onClick={chooseOnMap}>
-            Choose On Map
+            지도에서 찾으세요
           </button>
         </div>
         <div>
           <label />
           <button className="primary" type="submit">
-            Continue
+            계속하기
           </button>
         </div>
       </form>

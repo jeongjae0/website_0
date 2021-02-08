@@ -13,7 +13,7 @@ export default function OrderHistoryScreen(props) {
   }, [dispatch]);
   return (
     <div>
-      <h1>Order History</h1>
+      <h1>구매내역</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -22,12 +22,12 @@ export default function OrderHistoryScreen(props) {
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>아이디</th>
+              <th>날짜</th>
+              <th>총합계</th>
+              <th>결제됨</th>
+              <th>판매됨</th>
+              <th>액션</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +50,7 @@ export default function OrderHistoryScreen(props) {
                       props.history.push(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                    상세보기
                   </button>
                 </td>
               </tr>

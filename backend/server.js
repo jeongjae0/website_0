@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/channelground', {
+mongoose.connect(process.env.MONGODB_URL || "mongodb+srv://dbUser:zmfkdns132@cluster0.eqzhk.mongodb.net/test", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

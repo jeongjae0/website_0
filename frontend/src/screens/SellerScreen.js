@@ -54,7 +54,7 @@ export default function SellerScreen(props) {
               ></Rating>
             </li>
             <li>
-              <a href={`mailto:${user.email}`}>Contact Seller</a>
+              <a href={`mailto:${user.email}`}>판매자에게 연락하기</a>
             </li>
             <li>{user.seller.description}</li>
           </ul>
@@ -67,7 +67,7 @@ export default function SellerScreen(props) {
           <MessageBox variant="danger">{errorProducts}</MessageBox>
         ) : (
           <>
-            {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
+            {products.length === 0 && <MessageBox>0개의 제품이 판매되고 있습니다.</MessageBox>}
             <div className="row center">
               {products.map((product) => (
                 <Product key={product._id} product={product}></Product>
