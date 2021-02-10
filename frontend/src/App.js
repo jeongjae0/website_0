@@ -28,6 +28,9 @@ import { listProductCategories } from "./actions/productActions";
 import LoadingBox from "./components/LoadingBox";
 import MessageBox from "./components/MessageBox";
 import MapScreen from "./screens/MapScreen";
+import { Forgot } from "./components/Forgot";
+import { Reset } from "./components/Reset";
+import Contact from "./components/Contact"
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -78,6 +81,9 @@ function App() {
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
+            </Link>
+            <Link to="/contact">
+              문제신고
             </Link>
             {userInfo ? (
               <div className="dropdown">
@@ -240,6 +246,9 @@ function App() {
           ></SellerRoute>
 
           <Route path="/" component={HomeScreen} exact></Route>
+          <Route path="/forgot" component={Forgot} exact></Route>
+          <Route path="/reset:id" component={Reset} exact></Route>
+          <Route path="/contact" component={Contact} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>
       </div>

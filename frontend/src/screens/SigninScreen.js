@@ -69,6 +69,9 @@ export default function SigninScreen(props) {
             </Link>
           </div>
         </div>
+        <p>
+          <Link to={"/forgot"}>비밀번호 찾기</Link>
+        </p>
       </form>
     </div>
   );

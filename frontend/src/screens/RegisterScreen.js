@@ -45,7 +45,7 @@ export default function RegisterScreen(props) {
           <input
             type="text"
             id="name"
-            placeholder="Enter name"
+            placeholder="이름을 입력하세요"
             required
             onChange={(e) => setName(e.target.value)}
           ></input>
@@ -55,7 +55,7 @@ export default function RegisterScreen(props) {
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="이메일을 입력하세요"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
@@ -65,7 +65,7 @@ export default function RegisterScreen(props) {
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="비밀번호를 입력하세요"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
@@ -75,7 +75,7 @@ export default function RegisterScreen(props) {
           <input
             type="password"
             id="confirmPassword"
-            placeholder="Enter confirm password"
+            placeholder="비밀번호를 한 번 더 입력하세요"
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
