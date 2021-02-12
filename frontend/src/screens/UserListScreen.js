@@ -46,6 +46,8 @@ export default function UserListScreen(props) {
             <tr>
               <th>아이디</th>
               <th>이름</th>
+              <th>닉네임</th>
+              <th>전화번호</th>
               <th>이메일</th>
               <th>판매자?</th>
               <th>관리자?</th>
@@ -57,6 +59,8 @@ export default function UserListScreen(props) {
               <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
+                <td>{user.nickname}</td>
+                <td>{user.phoneNumber}</td>
                 <td>{user.email}</td>
                 <td>{user.isSeller ? 'YES' : ' NO'}</td>
                 <td>{user.isAdmin ? 'YES' : 'NO'}</td>

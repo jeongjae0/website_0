@@ -34,23 +34,23 @@ const Contact = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <h1>Contact Us 🤳</h1>
+      <h1>문제신고 🤳</h1>
 
-      <label>Name</label>
+      <label>이름</label>
       <input
-        placeholder="Name"
+        placeholder="이름"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label>Email</label>
+      <label>이메일</label>
       <input
-        placeholder="Email"
+        placeholder="이메일"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <label>Message</label>
+      <label>문제 내용</label>
       <textarea
         placeholder="Message"
         value={message}
@@ -61,7 +61,7 @@ const Contact = () => {
         type="submit"
         style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
       >
-        Submit
+        제출하기
       </button>
     </form>
   );

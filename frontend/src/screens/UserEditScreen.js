@@ -35,6 +35,8 @@ export default function UserEditScreen(props) {
     } else {
       setName(user.name);
       setEmail(user.email);
+      setNickname(user.nickname);
+      setPhoneNumber(user.phoneNumber);
       setIsSeller(user.isSeller);
       setIsAdmin(user.isAdmin);
     }
@@ -43,7 +45,7 @@ export default function UserEditScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     // dispatch update user
-    dispatch(updateUser({ _id: userId, name, email, isSeller, isAdmin }));
+    dispatch(updateUser({ _id: userId, name, email, nickname, phoneNumber, isSeller, isAdmin }));
   };
   return (
     <div>
@@ -66,9 +68,29 @@ export default function UserEditScreen(props) {
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                placeholder="변경할 이름을 입력하세요."
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+              ></input>
+            </div>
+            <div>
+              <label htmlFor="nickname">닉네임</label>
+              <input
+                id="nickname"
+                type="nickname"
+                placeholder="변경할 닉네임을 입력하세요."
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+              ></input>
+            </div>
+            <div>
+              <label htmlFor="phoneNumber">전화번호</label>
+              <input
+                id="phoneNumber"
+                type="phoneNumber"
+                placeholder="변경할 전화번호를 입력하세요"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
               ></input>
             </div>
             <div>

@@ -8,6 +8,8 @@ import MessageBox from '../components/MessageBox';
 export default function RegisterScreen(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -24,7 +26,7 @@ export default function RegisterScreen(props) {
     if (password !== confirmPassword) {
       alert('Password and confirm password are not match');
     } else {
-      dispatch(register(name, email, password));
+      dispatch(register(name, phoneNumber, nickname, email, password));
     }
   };
   useEffect(() => {
@@ -48,6 +50,26 @@ export default function RegisterScreen(props) {
             placeholder="이름을 입력하세요"
             required
             onChange={(e) => setName(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="phoneNumber">전화번호</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            placeholder="전화번호를 입력하세요"
+            required
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="nickname">닉네임</label>
+          <input
+            type="text"
+            id="nickname"
+            placeholder="닉네임을 입력하세요"
+            required
+            onChange={(e) => setNickname(e.target.value)}
           ></input>
         </div>
         <div>

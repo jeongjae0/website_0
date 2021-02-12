@@ -31,6 +31,8 @@ import MapScreen from "./screens/MapScreen";
 import { Forgot } from "./components/Forgot";
 import { Reset } from "./components/Reset";
 import Contact from "./components/Contact"
+import ConversionHistoryScreen from "./screens/ConversionHistoryScreen"
+import Conversion from "./components/Conversion"
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -191,6 +193,7 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+          <Route path="/conversionhistory" component={ConversionHistoryScreen}></Route>
           <Route
             path="/search/name/:name?"
             component={SearchScreen}
@@ -249,6 +252,7 @@ function App() {
           <Route path="/forgot" component={Forgot} exact></Route>
           <Route path="/reset:id" component={Reset} exact></Route>
           <Route path="/contact" component={Contact} exact></Route>
+          <Route path="/conversion" component={Conversion} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>
       </div>

@@ -84,7 +84,7 @@ export default function ProfileScreen() {
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                placeholder="이름을 입력하세요."
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></input>
@@ -94,7 +94,7 @@ export default function ProfileScreen() {
               <input
                 id="email"
                 type="email"
-                placeholder="Enter email"
+                placeholder="이메일을 입력하세요."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
@@ -104,7 +104,7 @@ export default function ProfileScreen() {
               <input
                 id="password"
                 type="password"
-                placeholder="Enter password"
+                placeholder="비밀번호를 입력하세요."
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
@@ -113,7 +113,7 @@ export default function ProfileScreen() {
               <input
                 id="confirmPassword"
                 type="password"
-                placeholder="Enter confirm password"
+                placeholder="비밀번호를 한 번 더 입력하세요."
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
             </div>
@@ -125,7 +125,7 @@ export default function ProfileScreen() {
                   <input
                     id="sellerName"
                     type="text"
-                    placeholder="Enter Seller Name"
+                    placeholder="판매자 이름을 입력하세요."
                     value={sellerName}
                     onChange={(e) => setSellerName(e.target.value)}
                   ></input>
@@ -134,8 +134,8 @@ export default function ProfileScreen() {
                   <label htmlFor="sellerLogo">판매자 아바타</label>
                   <input
                     id="sellerLogo"
-                    type="text"
-                    placeholder="Enter Seller Logo"
+                    type="image"
+                    placeholder="판매자 로고를 선택하세요."
                     value={sellerLogo}
                     onChange={(e) => setSellerLogo(e.target.value)}
                   ></input>
@@ -145,7 +145,7 @@ export default function ProfileScreen() {
                   <input
                     id="sellerDescription"
                     type="text"
-                    placeholder="Enter Seller Description"
+                    placeholder="판매자에 대해 설명해주세요."
                     value={sellerDescription}
                     onChange={(e) => setSellerDescription(e.target.value)}
                   ></input>
